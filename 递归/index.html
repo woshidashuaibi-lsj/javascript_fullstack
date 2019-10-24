@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // n! 递归：自己调用自己
+    // 3*2*1
+    function digui(n){
+      var result = 1
+    for(let i=1; i<=n; i++){  //小于等于嗷
+      result = result * i
+    }
+    return result
+  }
+  console.log(digui(3))
+// 递归写法
+  function mul(n){
+    if(n > 0){
+    return n * mul(n-1)
+    }else{
+      return 1
+    }
+  }
+  console.log(mul(3))
+  // 递归，一定能找到一个满足当前需求的数学公式，必须要一个出口
+  // step1: 返回找到的那个规律(公式)
+  // step2: 找到出口跳出递归 return1
+
+  // 斐波那契数列
+    // fb(n) = fb(n-1) + fb(n-2)
+    // fb(4) = fb(3) + fb(2)
+    // fb(3) = fb(2) + fb(1)
+    // fb(2) = fb(1) + fb(0)
+    function fb(n) {
+      if(n == 1 || n == 2){
+      return fb(n-1) + fb(n-2)
+      }else{
+        return 1
+      }
+    }
+    console.log(fb(4))
+    // 递归的空间复杂度太高
+  </script>
+</body>
+<ml>
