@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+//函数声明，整体变量提升
+//变量申明 声明提升
+//任何变量如果未经过声明就赋值此变量就会成为全局变量
+//一切声明的全局变量都归window所有
+        test()
+    function test(){
+console.log('123')
+    }
+    </script> -->
+    <script>
+    // function fn(a){
+    //     console.log(a)//un
+    //     var a=123
+    //     console.log(a)
+    //     function a(a){}
+    //     console.log(a)
+    //     var b=function(){}
+    //     console.log(b)
+    //     function d() {}
+        
+    // }
+    // fn(1)
+//     function test(a,b){
+// console.log(a)
+// c=0;
+// var c;
+// a=3
+// b=2
+// console.log(b)
+// function b(){}
+// function d(){}
+// console.log(d)
+//     }
+//     //AO{
+//     //    2//c:undefined   
+//     //  3//a:1  b:1
+//     // 4//b:function   d:function
+//     //}
+//     //a:1  b:2   b:2  d:function 
+//     test(1)
+    //--------------------------
+    //GO
+    // GO{
+    //     global:undefined,
+    //     fn:function(){}
+    // }
+    // var global=100
+    // function fn(){
+    //     console.log(global)
+    // }AO{
+
+    // }
+    // fn()
+    //-----------------------
+
+    
+    // GO{
+    //     global:undefined,
+    //     fn:function(){}
+    // }
+    // global=100
+    // function fn(){函数里面的执行的是AO
+    //     console.log(global)
+    //     global=200
+    //     console.log(global)
+    //     var global=300
+    // }fn()
+    // var global;   undefined  200  
+    </script>
+</body>
+</html>
