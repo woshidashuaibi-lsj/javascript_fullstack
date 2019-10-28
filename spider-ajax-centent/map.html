@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn"></button>
+    <script>
+        //Map
+        //key value
+        const btn=document.getElementById('btn');
+        var map={
+            name:'lihua',
+            [btn]:'dom node',
+            '3b':'b val',
+            'a':'a val'
+        }
+        map['2c']='c val';
+        map['0d']='d val';
+        let map1=new Map([
+            ['key','value']
+        ]);
+        map1.set('key1','value1');
+        map1.get('key');
+        map1.set(()=>{},'function');
+        //遍历数组 Map...for(let entey of map1){}
+        for(let entey of map1){
+console.log(entey);
+        }
+        console.log(btn);
+        console.log(Object.keys(map));
+        console.log(map1);
+        //有什么用
+        //为什么 es6 要增加一个Map
+        // 1.以前的key 只支持字符串
+        // 2.以前的key无序的
+   var NameMap={
+       zzz:'sing',
+       xxx:'dance',
+       lizhi:'rap',
+       name:'name'
+   }
+
+        function doSomething(name){
+//name=zzz 输出 sing
+//name=xxx 输出 dance
+//name=lizhi 输出 rap
+console.log(NameMap[name]);
+        }
+        doSomething('zzz')
+        //map1.entries()[key,value]
+        //map1.keys()
+        //map1.values()
+
+        //扩展运算符
+        console.log(...[1,2,4]);
+        console.log(Math.max(9,8,2))
+        console.log(Math.max(...[9,8,2]));
+        let a=[1,2,3];
+        let b=[4,5,6];
+        // a.push(4,5);
+        a.push(...b);
+        console.log(a);
+        </script>
+</body>
+</html>

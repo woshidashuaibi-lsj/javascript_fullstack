@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 异步
+    // 1.回调
+    // ()=>{
+    //     ()=>{
+    //         ()=>{
+
+    //         }
+    //     }
+    // }
+    // promise
+       fetch('./id.json')
+       .then(res=>res.json())
+       .then(data=>{
+           console.log(data);
+           return fetch('./detail.json')
+        }) 
+        .then(detail=>detail.json())
+        .then(data=>{
+            console.log('detail',data)
+        })
+
+
+
+        //async  await  异步的最好的解决方式
+        //await  后面接promise
+        async function getDetail(){   //
+           let  id =await fetch('./id.json');//await等待一下的意思
+           id=await id.json();
+        //    转为json也是异步的
+           let detail=await fetch('./detail.json');
+           detail=await detail.json(); 
+           console.log('await',id);  
+           console.log('await',detail);
+        }
+        getDetail();
+        </script>
+</body>
+</html>
