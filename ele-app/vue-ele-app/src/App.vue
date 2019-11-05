@@ -12,7 +12,7 @@
       <div class="tab-item">
         <router-link to="/seller">商家</router-link>
       </div>
-     </div>    
+     </div>
     <router-view/>
   </div>
 </template>
