@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //过程抽象
+
+        //无参化
+        function add(a, b, c) {
+            console.log(a, b, c);
+        }
+        add(1, 2, 3);
+        let arr = [1, 2, 3];
+        arr.forEach(add);
+        //===和下面同等
+        arr.forEach((item, i, arr) => {
+            console.log(item, i, arr);
+        })
+        //函数是一等公民
+        //函数和其他变量一样有同等的地位
+        arr.forEach((item, i, arr) => {
+            console.log(item, i, arr);
+        })
+
+
+        console.log([1, 2, 3].map(parseInt));
+        parseInt('123px', 10);//123 代表进制
+        parseInt(1, 0, [1, 2, 3])//0  ->10
+        parseInt(2, 1, [1, 2, 3])//NaN
+        parseInt(3, 2, [1, 2, 3])// 2  01010
+        //把多少 进制 的 xx 转为10 进制的 xx
+        // console.log()
+        console.log(parseInt('1',2))
+    </script>
+</body>
+
+</html>

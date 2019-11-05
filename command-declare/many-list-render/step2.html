@@ -21,7 +21,7 @@
         setTimeout(()=>{
             for(let i=0;i<once;i++){
             const liNode = document.createElement('li');
-      liNode.innerText = Math.random() * total;
+      liNode.innerText = Math.random() * 10000;
       ul.appendChild(liNode);
         }
         loop(total-once);
