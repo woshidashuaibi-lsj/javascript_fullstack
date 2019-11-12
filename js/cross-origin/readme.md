@@ -10,7 +10,7 @@ http://localhost.com/api/
 baidu.com   api.baidu.com
 
 
-##cors
+## cors
 cross-origin-resource-share
 一个规范，允许服务器申明那些源可以访问
 
@@ -20,3 +20,6 @@ cross-origin-resource-share
 
 
 简单请求 表单可以构造的请求
+
+## jsonP
+link script img :不受同源策略的影响
