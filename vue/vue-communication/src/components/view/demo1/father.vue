@@ -1,5 +1,5 @@
 <template>
-  <div class="container">jhh
+  <div class="container">
     <child v-bind:send-msg="myMsg"></child>
   </div>
 </template>
