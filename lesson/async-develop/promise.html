@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .light{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            background-color: black;
+        }
+        </style>
+</head>
+<body>
+    <div class="light"></div>
+    <script>
+        const light=document.querySelector('.light');
+    let step1 =() => new Promise((resolve,reject)=>{
+     setTimeout(()=>{
+        light.style.backgroundColor='red';
+        resolve();
+     },1000);
+    })
+    let step2 =() =>new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+        light.style.backgroundColor='green';
+        resolve();
+     },2000);
+    })
+    //解决地域问题
+    // step1()
+    // //.then等上面的成功后才执行
+    // .then(res=>{
+    //     //then return primose 之后 后面还可以接着调用 .then
+    //   return step2();
+    // })
+    // .then(res =>{
+    //     console.log(123);
+    // })
+    //处理异步最牛逼的方式让代码一行一行写没有嵌套关系
+    async function run(){
+        await step1();
+        await step2();
+    }
+    run();
+    </script>
+</body>
+</html>
