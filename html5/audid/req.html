@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <style>
+         *{
+             margin: 0;
+             padding: 0;
+         }
+     .box1,.box2{
+         position: absolute;
+         width: 50px;
+         height: 50px;
+         border-radius: 50%;
+         background: #000;
+     }
+     .box2{
+         top: 60px;
+         
+     }
+     </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <script>
+    var box1 =document.querySelector('.box1')
+    var box2 =document.querySelector('.box2')
+    var dis= 0,timer=0;
+    timer=setInterval(function(){
+      box1.style.left = ++dis+'px'
+      if(dis>=500)clearInterval(timer)
+    },16)
+
+    var diss=0
+    function animation(){
+        requestAnimationFrame(function(){
+            box2.style.left = ++diss+'px'
+            if(diss<500) animation()
+        })
+    }
+    animation()
+    </script>
+</body>
+</html>
