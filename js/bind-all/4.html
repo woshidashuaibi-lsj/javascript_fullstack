@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Function.prototype.myBind = function(oThis, ...aArgs) {
+      var fToBind = this;
+      var fBound = function(...bArgs) {
+          //拿到 所有的参数
+          //绑定 this 没有考虑优先级
+          //如果被 new 调用 this 指向new  完的 实例
+          //否则 就是 第一个参数 oThis
+       return fToBind.apply(oThis,aArgs.concat(bArgs));
+      }
+      return fBound;
+    }
+    function sum(a, b, c) {
+        this.a=789
+      return a + b + c;
+    }
+    let obj={};
+    // 第一步调用
+    var a = sum
+    .myBind(obj, 1);
+    // 第二步调用
+    a(2, 3);
+   console.log(a(2, 3));
+   let c=new a();
+   console.log(obj);
+    </script>
+</body>
+</html>
