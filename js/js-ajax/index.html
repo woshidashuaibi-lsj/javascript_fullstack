@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+   <div class="people">
+       <div class="name"></div>
+       <div class="age"></div>
+   </div>
+   <!-- <script>
+//    var data = $.ajax({
+//        url:'./mock.json',
+//        type:'get',
+//        dataType:'json',
+//        timeout:5000,
+//        async:true,
+//        success:function(data){
+//         console.log(data.person)
+//         $('.name').html(data.person.name)
+//         $('.age').html(data.person.age)
+//        }
+//    })
+//    console.log(Object.prototype.toString.call(data))
+
+   </script> -->
+<script>
+  var xhr=null
+  xhr=new XMLHttpRequest()
+
+  xhr.open('get','./mock.json',true)
+  xhr.send()
+  //状态变化回调
+// 第一步，创建XMLHttpRequest对象
+
+// 第二步，注册回调函数
+
+// 第三步，配置请求信息，open(),get
+
+// 第四步，发送请求,post请求下，要传递的参数放这
+
+// 第五步，创建回调函数
+  xhr.onreadystatechange = function(){
+    //   console.log(xhr.readyState,xhr.status)
+    if(xhr.readyState===4 && xhr.status===200){
+        console.log(xhr.responseText)
+        var data=JSON.parse(xhr.responseText)
+        document.querySelector('.name').innerHTML=data.persion.name
+    }
+  }
+</script>
+
+</body>
+</html>
