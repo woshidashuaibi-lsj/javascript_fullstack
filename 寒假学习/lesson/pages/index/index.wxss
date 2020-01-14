@@ -1,0 +1,36 @@
+.page__bd{
+  position: relative;
+}
+.weui-search-bar {
+  width:100%;
+  background-color:#DC4238;
+  border: 1px  solid #DC4238;
+}
+.weui-search-bar__form{
+  background-color: #FBFCFE;
+}
+.weui-search-bar__box{
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+}
+.weui-search-bar__cancel-btn {
+  color:#ffffff;
+  font-size:28rpx;
+}
+.hide{
+  display: none;
+}
+
+.search-list{
+  position: absolute;
+  width: 100%;
+  background-color: #ffffff;
+}
+.lists{
+  box-sizing: border-box;
+  padding: 8rpx 14rpx;
+}
+.list{
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
