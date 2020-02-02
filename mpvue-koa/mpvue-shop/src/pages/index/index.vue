@@ -13,13 +13,17 @@
 
 <script>
 import amapFile from '../../utils/amap-wx.js'
+import { mapState ,mapMutations} from 'vuex'
 export default {
   data(){
     return{
-      cityName:'南昌'
     }
   },
+  computed:{
+    ...mapState(['cityName'])
+  },
   methods:{
+    ...mapMutations(['update']),
     toMappage(){
       //通过wx.getSetting 先查询一下用户是否授权 “scoped.record”
       let _this=this
@@ -49,7 +53,7 @@ export default {
     },
     getCityName(){
       let _this=this
-       var myAmapFun = new amapFile.AMapWX({key:'a92097f46362af3b30cf10af699fd50d'});
+       var myAmapFun = new amapFile.AMapWX({key:'3206c84631a1ca64cf4e02f5eefff384'});
        myAmapFun.getRegeo({
          success: function(data){
            //成功回调
@@ -59,7 +63,8 @@ export default {
          fail:function(info){
            //失败回调
            console.log(info)
-           _this.cityName='北京'
+          //  _this.cityName='北京'
+          _this.update({cityName: '北京'})
          }
        })
     }
