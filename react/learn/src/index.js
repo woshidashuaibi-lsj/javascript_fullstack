@@ -6,6 +6,7 @@ import CommentVs from './components/CommentVs'
 import PureComponentTest from './components/PureComponentTest'
 import ButtonTest from './components/ButtonTest'
 import Hoc from './components/Hoc'
+import ContextSample from './components/ContextSample'
 // import App from './App'
 // class App extends React.Component {
 //     render () {
@@ -163,4 +164,5 @@ class FeatureReturnFraments extends React.Component {
 // },2000)
 
 // ReactDOM.render(<PureComponentTest body='vue is very good' author='youyuxi'/>,document.querySelector('#root'))
-ReactDOM.render(<Hoc state="React"/>,document.getElementById('root'))
+// ReactDOM.render(<Hoc state="ContextSampl"/>,document.getElementById('root'))
+ReactDOM.render(<ContextSample/>,document.getElementById('root'))

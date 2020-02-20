@@ -18,7 +18,7 @@ const withLog = Comp => {
   console.log(Comp.name + '渲染了')
   return props => <Comp {...props}/>
 }
-//ES6装饰器简化高阶组件的写法
+//ES6装饰器简化高阶组件的写法 必需要安装 "@babel/plugin-proposal-decorators",
 @withLog // withLog(Jpsite)
 @withName // withName(withLog)
 @withLog
