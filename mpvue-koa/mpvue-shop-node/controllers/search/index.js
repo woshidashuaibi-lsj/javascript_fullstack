@@ -1,6 +1,7 @@
 const { mysql } = require('../../mysql')
 
 async function indexAction (ctx) {
+    
     const openId= ctx.query.openId
     //默认关键字
     const defaultKeyword = await mysql('nideshop_keywords').where({
