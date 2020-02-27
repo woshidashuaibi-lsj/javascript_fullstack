@@ -18,21 +18,23 @@
         this.state = {
           opacity: 1.0
         }
-        this.opacity=this.opacity.bind(this)
       }
-      reduce () {
-          if(this.state.opacity===0.1){
-            this.setState({
-              opacity: 1.0
-          }) 
-          }else{
+      componentDidMount () {
+        // setInterval 是一个异步操作 ，会进入到浏览器的任务队列 被挂起
+        setInterval(() => {
+          var opacity=this.state.opacity
+          opacity -= 0.05
+          if(opacity<0.1){
+            opacity=1.0
+          }
           this.setState({
-              opacity:this.state.opacity - 0.1
-          }) }
+            opacity:opacity
+          })
+        },100)
       }
       render () {
         return (
-          <div style={{opacity: this.state.opacity}} onClick={this.reduce}>
+          <div style={{opacity: this.state.opacity}}>
             Hello {this.props.name}
           </div>
         )
