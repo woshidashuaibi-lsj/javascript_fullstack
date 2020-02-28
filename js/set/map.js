@@ -63,9 +63,11 @@
 //相同的值对不同对象的引用，在map结构中视为俩个键
 
 let map =new Map()
-map.set(-0,123)
-map.set(true,1)
-map.set('true',2)
+// map.set(-0,123)
+// map.set(true,1)
+// map.set('true',2)
+map.set(undefined,33)
+map.set(null,44)
 
-
+map.set(NaN,55)
 console.log(map.get(+0))

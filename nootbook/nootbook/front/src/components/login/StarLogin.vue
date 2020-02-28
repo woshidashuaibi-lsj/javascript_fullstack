@@ -42,7 +42,7 @@ export default {
       .then((res) => {
         console.log(res)
         if(res.data.code==='200') {
-          sessionStorage.setItem('userInfo',stringfy(res.data.data))
+          sessionStorage.setItem('userInfo',JSON.stringify(res.data.data))
           this.$router.push({path:'/noteClass'})
         }else{
           this.$toast(res.data.mess)

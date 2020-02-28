@@ -1,53 +1,65 @@
 <template>
-<div class="star-login">
-        <h1>注册</h1>
-        <div class="login-wraper">
-            <div class="avatar" :style="`background-image:url(${avatar})`"></div>
-            <div class="input-group">
-                <label for="nickname">昵称</label><input type="text" id="nickname" v-model="nickname">
-            </div>
-            <div class="input-group input-group-panel">
-                <label for="username">账号</label><input type="text" id="username" v-model="username">
-            </div>
-            <div class="input-group input-group-panel">
-                <label for="userpwd">密码</label><input type="password" id="userpwd" v-model="userpwd">
-            </div>
-            <div class="sign" @click="register">注册</div>
-            <span class="badge-img">+</span>
-        </div>
-        <p class="register" @click="login">已经有账号了？点击登录</p>
+  <div class="star-login">
+    <h1>注册</h1>
+    <div class="login-wraper">
+      <div class="avatar" :style="`background-image:url(${avatar})`"></div>
+      <div class="input-group">
+        <label for="nickname">昵称</label>
+        <input type="text" id="nickname" v-model="nickname" />
+      </div>
+      <div class="input-group input-group-panel">
+        <label for="username">账号</label>
+        <input type="text" id="username" v-model="username" />
+      </div>
+      <div class="input-group input-group-panel">
+        <label for="userpwd">密码</label>
+        <input type="password" id="userpwd" v-model="userpwd" />
+      </div>
+      <div class="sign" @click="register">注册</div>
+      <span class="badge-img">+</span>
     </div>
-
+    <p class="register" @click="login">已经有账号了？点击登录</p>
+  </div>
 </template>
 
 <script>
 export default {
   data () {
     return {
-     nickname:"",
+      avatar: require("./../../assets/img/raw_1512446162.png"),
+      nickname:"",
       username: "",
       userpwd: ""
     }
   },
-  methods:{
-      register() {
-          if(this.nickname.trim()===''||this.username.trim()===''||this.userpwd.trim()===''){
-              this.$toast('什么什么不能为空')
-          }
-          this.$http({
-              methods:'post',
-              url:'http://localhost:3000/users/userRegister',
-              data:{
-                  nickname: this.nickname.trim(),
-                  username: this.username.trim(),
-                  userpwd:this.userpwd.trim()
-              }
-          }).then((res)=>{
-
-          })
+  methods: {
+    register () {
+      if (this.nickname.trim() === '' || this.username.trim() === '' || this.userpwd.trim() === '') {
+        this.$toast('昵称、账号或密码不能为空')
       }
+      this.$http({
+        method: 'post',
+        url: 'http://localhost:3000/users/userRegister',
+        data: {
+          nickname: this.nickname.trim(),
+          username: this.username.trim(),
+          userpwd: this.userpwd.trim()
+        }
+      })
+      .then(res => {
+        console.log(res)
+        if (res.data.code === '200') {
+          this.$router.push({path: '/StarLogin'})
+        } else {
+          this.$toast(res.data.mess)
+        }
+      })
+    },
+    login () {
+      this.$router.push({path: '/StarLogin'})
+    }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>
@@ -61,6 +73,7 @@ input {
   background: #fff;
   padding: 0 1.28rem;
   overflow: hidden;
+  box-sizing: border-box;
   h1 {
     margin-top: 1.12rem;
     height: 0.693333rem;

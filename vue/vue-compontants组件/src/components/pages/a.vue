@@ -12,6 +12,11 @@ export default {
     },
 components:{
     'testb':b
+},
+data(){
+    return{
+        // name:'hahah'
+    }
 }
 }
 </script>

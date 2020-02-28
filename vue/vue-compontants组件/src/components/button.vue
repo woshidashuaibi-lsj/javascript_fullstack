@@ -26,12 +26,17 @@ export default {
     },
     data(){
         return{
+            message:'子组件的内容'
         }
     },
     methods:{
         handleclick(){
-         this.$emit('on-click')
-        //  console.log('')
+        //  this.$emit('on-click')
+         console.log('aaa')
+        },
+         sureclick(){
+        //  this.$emit('on-click')
+         console.log('vvvvv')
         }
     }
 }

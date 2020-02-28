@@ -7,6 +7,10 @@ import {Swipe, SwipeItem,Icon, Field, ActionSheet, Toast, Panel, Uploader} from 
 import 'vant/lib/index.css';
 import axios from 'axios'
 import 'amfe-flexible'
+// import 'quill/dist/quill.core.css'
+// import 'quill/dist/quill.snow.css'
+// import 'quill/dist/quill.bubble.css'
+// import { quillEditor }from 'vue-quill-editor'
 
 Vue.use(Swipe).use(SwipeItem).use(Icon).use(Field).use(ActionSheet).use(Toast).use(Panel).use(Uploader)
 
