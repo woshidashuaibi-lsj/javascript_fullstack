@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 
 //HOC 高阶组件
 
-function HOC(wrappedComponent) {
+function HOC(WrappedComponent) {
     return class extends Component {
         constructor (props) {
             super(props)
@@ -15,7 +15,7 @@ function HOC(wrappedComponent) {
             this.setState({
                 name: event.target.value
             })
-            // console.log()
+            console.log(event.target.value)
         }
         render() {
             const newProps = {
@@ -24,13 +24,13 @@ function HOC(wrappedComponent) {
                     onChange: this.onChange
                 }
             }
-            return <wrappedComponent {...newProps}/>
+            return <WrappedComponent {...newProps}/>
         }
     }
 }
 
 // 使用
-@HOC
+// @HOC
 class Example extends Component {
     render () {
         return (
@@ -39,6 +39,6 @@ class Example extends Component {
     }
 }
 
-// const Example= HOC (Example)
+const TEST= HOC (Example)
 
-export default Example
+export default TEST
