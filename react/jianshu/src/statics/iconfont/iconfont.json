@@ -1,0 +1,44 @@
+{
+  "id": "1688238",
+  "name": "简书",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "简书icon仓库",
+  "glyphs": [
+    {
+      "icon_id": "1089814",
+      "name": "导航 (1)",
+      "font_class": "daohang1",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "1697812",
+      "name": "手机下载",
+      "font_class": "ic_system_update_px",
+      "unicode": "e6d4",
+      "unicode_decimal": 59092
+    },
+    {
+      "icon_id": "2658504",
+      "name": "Aa",
+      "font_class": "Aa",
+      "unicode": "e904",
+      "unicode_decimal": 59652
+    },
+    {
+      "icon_id": "8546046",
+      "name": "放大镜",
+      "font_class": "fangdajing",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "8623565",
+      "name": "毛笔",
+      "font_class": "maobi",
+      "unicode": "e7c2",
+      "unicode_decimal": 59330
+    }
+  ]
+}
