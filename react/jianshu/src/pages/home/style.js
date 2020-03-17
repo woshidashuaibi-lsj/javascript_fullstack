@@ -1,12 +1,12 @@
-import styled from  'styled-components'
+import styled from 'styled-components'
 
- export const HomeWrapper = styled.div`
+export const HomeWrapper = styled.div`
    width: 960px;
    margin: 0 auto;
    overflow:hidden;
 `;
 
- export const HomeLeft = styled.div`
+export const HomeLeft = styled.div`
    margin-left:15px;
    padding-top:30px;
    width: 625px;
@@ -17,7 +17,7 @@ import styled from  'styled-components'
    }
 `;
 
- export const HomeRight = styled.div`
+export const HomeRight = styled.div`
    width: 280px;
    float: right;
 `;
@@ -27,7 +27,7 @@ export const TopicWrapper = styled.div`
    margin-left: -18px;
    border-bottom: 1px solid #dcdcdc;
 `;
-export const TopicItem= styled.div`
+export const TopicItem = styled.div`
   float:left;
   height: 32px;
   line-height: 32px;
@@ -75,22 +75,122 @@ export const ListInfo = styled.div`
     }
 ` ;
 
-export const RecommendWrapper =styled.div`
+export const RecommendWrapper = styled.div`
   margin: 30px 0;
   width: 280px;
 `;
-export const RecommendItem =styled.div`
+export const RecommendItem = styled.div`
   width: 280px;
   height:50px;
   background: url(${(props) => props.imgUrl});
   background-size: contain;
   margin-top:8px;
 `;
-export const WriterWrapper= styled.div`
+export const WriterWrapper = styled.div`
 width:278px;
-border:1px solid #dcdcdc;
+/* border:1px solid #dcdcdc; */
 border-radius: 3px;
 height: 300px;
 line-height: 300px;
 text-align:center;
+`
+export const WriterTitle = styled.div`
+height:150px;
+
+margin-top:100px;
+  text-align: left;
+  .title{
+    font-size: 14px;
+    color: #969696;
+  }
+  .pagechange{
+    float: right;
+    display: inline-block;
+    font-size: 14px;
+    /* margin-right:20px; */
+    color: #969696;
+  }
+`
+export const WriterList = styled.div`
+    margin-top: 15px;
+    /* display: list-item; */
+    /* text-align: -webkit-match-parent; */
+    box-sizing: border-box;
+    line-height: 20px;
+    /* overflow: hidden; */
+    .pho{
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    /* width: 100%;
+    height: 100%; */
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    }
+    .following{
+      float: right;
+    margin-top: 5px;
+    padding: 0;
+    font-size: 13px;
+    color: #42c02e;
+    }
+    .name{
+      padding-top: 5px;
+      padding-left:10px;
+    margin-right: 170px;
+    font-size: 14px;
+    display: block;
+    /* cursor: pointer; */
+    color: #333;
+    }
+    .src{
+      margin-right: 70px;
+      margin-top: 2px;
+    font-size: 12px;
+    color: #969696;
+    }
+`
+export const WriterButton = styled.div`
+    position: absolute;
+    padding: 7px 7px 7px 12px;
+    margin-top:10px;
+    margin-left:1000px;
+    left: 0;
+    width: 160px;
+    height:20px;
+    font-size: 13px;
+    color: #787878;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    text-align: center;
+    .find{
+      margin-top:-140px;
+      margin-left:50px;
+
+      position:absolute;
+    }
+`
+export const LoadMore = styled.div`
+    width: 100%;
+    height:40px;
+    margin: 30px 0;
+    line-height: 40px;
+    text-align: center;
+    background: #a5a5a5;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+`
+export const BackTop = styled.div`
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width:60px;
+  height:60px;
+  line-height:60px;
+  text-align: center;
+  border: 1px solid #ccc;
+  font-size: 12px;
 `
