@@ -23,9 +23,9 @@ class Home extends Component {
         window.addEventListener('scroll', this.props.changeScrollTopShow)
     }
 
-    componentWillUnmount () {
-        window.remove.addEventListener('scroll', this.props.changeScrollTopShow)
-    }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.props.changeScrollTopShow)
+      }
 
     handleScrollTop () {
         window.scrollTo(0,0)

@@ -2,23 +2,26 @@ import React, { Component } from 'react'
 import { ListItem, ListInfo, LoadMore } from '../style'
 import { connect } from 'react-redux'
 import { actionCreators } from '../store'
+import { Link } from 'react-router-dom'
 
 
 class List extends Component {
     render() {
-        const { list,getMoreList,page } = this.props
+        const { list, getMoreList, page } = this.props
         return (
             <div>
                 {
                     list.map((item, index) => {
                         return (
-                            <ListItem key={index}>
-                                <img className="pic" src={item.get('imgUrl')} alt="" />
-                                <ListInfo>
-                                    <h3 className="title">{item.get('title')}</h3>
-                                    <p className="desc">{item.get('desc')}</p>
-                                </ListInfo>
-                            </ListItem>
+                            <Link key={index} to={'/detail/'+ item.get('id')}>
+                                <ListItem>
+                                    <img className="pic" src={item.get('imgUrl')} alt="" />
+                                    <ListInfo>
+                                        <h3 className="title">{item.get('title')}</h3>
+                                        <p className="desc">{item.get('desc')}</p>
+                                    </ListInfo>
+                                </ListItem>
+                            </Link>
                         )
                     })
                 }
@@ -34,7 +37,7 @@ const mapState = (state) => ({
 })
 
 
-const mapDispatch =(dispatch) => ({
+const mapDispatch = (dispatch) => ({
     getMoreList(page) {
         let action = actionCreators.getMoreList(page)
         action(dispatch)
