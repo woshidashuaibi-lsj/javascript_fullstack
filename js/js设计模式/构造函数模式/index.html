@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //用于创建特定类型的构造函数
+        //js中构造函数比较特殊的地方， new
+        var AA = {
+            zaomen: function (huawen) {
+                console.log(this)
+                // if (!(this instanceof zaomen)) {
+                //     return new zaomen(huawen)
+                // }
+                var _huawen = '普通'
+                if (huawen) {
+                    _huawen = huawen
+                }
+                this.suo = '普通'
+                this.huawen = _huawen
+                this.create = function () {
+                    return '锁' + this.suo + '花纹' + this.huawen
+                }
+            }
+        }
+        var BB = {
+            zaomen: function (huawen) {
+                console.log(this)
+                // if (!(this instanceof zaomen)) {
+                //     return new zaomen(huawen)
+                // }
+                var _huawen = '普通'
+                if (huawen) {
+                    _huawen = huawen
+                }
+                this.suo = '普通'
+                this.huawen = _huawen
+                this.create = function () {
+                    return '锁' + this.suo + '花纹' + this.huawen
+                }
+            }
+        }
+
+        // var xiaozhang = new zaomen()
+        var xiaozhang = new AA.zaomen()
+        alert(xiaozhang.create())
+
+        // var xiaoli = new zaomen('绚丽')
+        var xiaoli = new BB.zaomen('绚丽')
+        alert('xiaoli' + xiaoli.create())
+    </script>
+</body>
+
+</html>
+
