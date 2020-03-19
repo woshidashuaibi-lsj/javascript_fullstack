@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Foo (e) {
+            this.name = 'wn'
+            this.age = e
+            // return {}
+        //  console.log(Foo.prototype);
+         
+         
+        }
+        function objectFactory() {
+           const obj = {}  //1
+           const Constructor = [].shift.call(arguments)//3
+        //    const [Constructor, ...args] = [...arguments]
+           
+
+        //原型连接
+           obj._proto_ = Constructor.prototype //5
+           const ret= Constructor.apply(obj,arguments)//4
+        //    return obj  //2
+            return typeof ret === 'object' ? ret : obj           
+        }
+        
+        // console.log(new Foo(18))
+        console.log(objectFactory(Foo,18));
+        
+
+
+
+        // prototype  //显式原型链
+        // _proto_   //隐式原型链
+
+        //   function Abc() {
+        //       this.name = 'wn'
+        //   }
+        //   let test = new Abc()
+        //   test._proto_ = Abc.prototype
+        //   实例的隐式原型链等于原式的显式原型链
+    </script>
+</body>
+</html>
+
+
+
+<!-- function add (x, y) 
+{ 
+    console.log (x + y);
+} 
+function minus (x, y) 
+{ 
+    console.log (x - y); 
+} 
+add.call (minus , 1, 1); -->
+<!-- 这个例子中的意思就是用 add 来替换 minus ，add.call(minus ,1,1) == add(1,1) ，所以运行结果为：console.log (2); -->
+<!-- call方法 -->
+
+
+<!-- [].shift   返回数组的第一项-->
+
+
+<!-- apply()方法 接收两个参数，一个是函数运行的作用域（this），另一个是参数数组。
+语法：apply([thisObj [,argArray] ]);，调用一个对象的一个方法，2另一个对象替换当前对象。 -->
