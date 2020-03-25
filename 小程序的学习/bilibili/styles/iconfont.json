@@ -1,0 +1,23 @@
+{
+  "id": "1690443",
+  "name": "bilinili",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "B站用icon",
+  "glyphs": [
+    {
+      "icon_id": "1468341",
+      "name": "眼睛",
+      "font_class": "yanjing",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "3260766",
+      "name": "ping-lun",
+      "font_class": "ping-lun",
+      "unicode": "e7d1",
+      "unicode_decimal": 59345
+    }
+  ]
+}
