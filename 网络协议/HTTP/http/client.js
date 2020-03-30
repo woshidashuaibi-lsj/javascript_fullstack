@@ -16,17 +16,19 @@ const client= http.request({
     //http
     protocol: 'http:',
     method: 'GET',
-    path: '/'
+    path: '/img/bd_logo1.png?where=super'
 },(res)=>{
     //这个函数会在服务器相应的时候触发
     // res=>socket
-    let content = ''
+    // let content = ''
+    let content = Buffer.alloc(0)
     res.on('data',(data) => {
         // console.log(data.toString())
-        content += data.toString()
+        // content += data.toString()
+        content = Buffer.concat([content, data],content.length + data.length)
     })
     res.on('end', () => {
-        fs.writeFileSync('./baidu.html',content)
+        fs.writeFileSync('./baidu.png',content)
     })
 })
 
